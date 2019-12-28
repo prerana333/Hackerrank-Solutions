@@ -1,4 +1,4 @@
-"""Here is a sample line of code that can be executed in Python:
+"""Problem 1: Here is a sample line of code that can be executed in Python:
 
 print("Hello, World!")
 You can just as easily store a string as a variable and then print it to stdout:
@@ -18,7 +18,145 @@ Print Hello, World! to stdout.
 Sample Output 0
 
 Hello, World!"""
-----------------------------------------------------------------------------------------------------------------------------------
-#code: 
+
+#code:
 
 print("Hello, World!")
+
+--------------------------------------------------------------------------------------------------------------------------------
+""" Problem 2: Task
+Given an integer,n, perform the following conditional actions:
+
+If n is odd, print Weird
+If n is even and in the inclusive range of  to , print Not Weird
+If n is even and in the inclusive range of  to , print Weird
+If n is even and greater than , print Not Weird
+Input Format
+
+A single line containing a positive integer, .
+
+Constraints
+
+Output Format
+
+Print Weird if the number is weird; otherwise, print Not Weird.
+
+Sample Input 0
+
+3
+Sample Output 0
+
+Weird
+Explanation 0
+
+
+n is odd and odd numbers are weird, so we print Weird.
+
+Sample Input 1
+
+24
+Sample Output 1
+
+Not Weird
+Explanation 1
+
+and n is even, so it isn't weird. Thus, we print Not Weird.""
+ 
+#code: 
+
+n=int(input())
+if n % 2 != 0:
+    print("Weird")
+if n % 2 == 0:
+    if (2 <= n <=5):
+        print("Not Weird")
+    elif (6 <= n <= 20):
+        print("Weird")
+    elif n > 20 :
+        print("Not Weird")
+---------------------------------------------------------------------------------------------------------------------
+"""Problem 3: Arithmetic Operators """
+
+#code:
+
+a=int(input())
+b=int(input())
+print(a+b)
+print(a-b)
+print(a*b)
+
+--------------------------------------------------------------------------------------------------------------------------------
+ """Problem 4: Python: Division """
+ 
+ #code:
+ 
+a = int(input())
+b = int(input())
+print(a//b)
+print(a/b)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 5: Loops """
+
+#code:
+
+n=int(input())
+for i in range(n):
+    print(i*i)
+    
+--------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 6: Write a function: Task
+You are given the year, and you have to write a function to check if the year is leap or not. """
+
+#code:
+
+def is_leap(year):
+    leap = False
+    if year % 4 == 0:
+        if year % 400 == 0:
+            leap = True
+        elif year % 100 == 0:
+            leap = False
+        else:
+            leap = True
+    else:
+        leap = False
+    return leap
+    
+-------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 7: Print Function : Read an integer N.
+
+Without using any string methods, try to print the following:
+123....N
+
+
+Note that "" represents the values in between.
+
+Input Format
+
+The first line contains an integer N.
+
+Output Format
+
+Output the answer as explained in the task.
+
+Sample Input 0
+
+3
+Sample Output 0
+
+123
+
+#code:
+
+n=int(input())
+for i in range(1,n+1):
+    print(i,sep="",end="")
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
