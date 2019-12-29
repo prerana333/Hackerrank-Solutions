@@ -46,4 +46,93 @@ print(x[-2])
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-"""Problem 3: 
+"""Problem 3: Nested Lists 
+Given the names and grades for each student in a Physics class of N students, store them in a nested list and print the 
+name(s) of any student(s) having the second lowest grade.
+
+Note: If there are multiple students with the same grade, order their names alphabetically 
+and print each name on a new line. """
+
+
+#code:
+
+N = int(input())
+students = []
+for i in range(2*N):
+    students.append(input().split())
+
+grades = {}
+for j in range(0, len(students), 2):
+    grades[students[j][0]] = float(students[j + 1][0])
+
+result = []
+num_to_match = sorted(set(grades.values()))[1]
+
+for pupil in grades.keys():
+    if grades[pupil] == num_to_match:
+        result.append(pupil)
+
+for k in sorted(result):
+    print(k)
+    
+-------------------------------------------------------------------------------------------------------------------------------
+"""Problem 4: Finding the percentage :You have a record of  students. 
+Each record contains the student's name, and their percent marks in Maths, Physics and Chemistry. 
+The marks can be floating values. The user enters some integer  followed by the names and marks for  students. 
+You are required to save the record in a dictionary data type. The user then enters a student's name. 
+Output the average percentage marks obtained by that student, correct to two decimal places. """
+
+#code:
+
+N=int(input())
+results={}
+for i in range(N):
+    a =input().split(' ')
+    results[a[0]]=[float(x) for x in a[1:]]
+student=input()
+print("%.2f" %(sum(results[student])/len(results[student])))
+
+------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 5 : Lists """
+
+#code:
+
+list = []
+n = int(input())
+for i in range(n):
+    a = input().split()
+    if len(a) == 3:
+        eval("list." + a[0] + "(" + a[1] + "," + a[2] + ")")
+    elif len(a) == 2:
+        eval("list." + a[0] + "(" + a[1] + ")")
+    elif a[0] == "print":
+        print(list)
+    else:
+        eval("list." + a[0] + "()")
+        
+---------------------------------------------------------------------------------------------------------------------------------------
+"""Problem 6: Tuple""" 
+
+#code:
+
+tuple_len=int(input())
+a=tuple(map(int, input().split(" ")))
+print(hash(a))
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
