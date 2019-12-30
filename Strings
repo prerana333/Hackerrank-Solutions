@@ -42,4 +42,107 @@ def print_full_name(a, b):
     
 ---------------------------------------------------------------------------------------------------------------------------------
 
+"""Problem 4 : Mutations """
+
+#code:
+
+def mutate_string(string, position, character):
+    return string[:position] + character + string[position+1:]
+    
+-------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 5: In this challenge, the user enters a string and a substring. 
+You have to print the number of times that the substring occurs in the given
+string. String traversal will take place from left to right, not from right to left."""
+
+#code:
+
+def count_substring(string, sub_string):
+    count=0
+    for i in range(len(string)-len(sub_string)+1):
+        if string[i:i+len(sub_string)]==sub_string:
+            count += 1
+    return count
+
+--------------------------------------------------------------------------------------------------------------------------------
+"""Problem 6: String Validators """
+
+#code:
+
+S = input()
+
+print(any(c.isalnum() for c in S))
+print(any(c.isalpha() for c in S))
+print(any(c.isdigit() for c in S))
+print(any(c.islower() for c in S))
+print(any(c.isupper() for c in S))
+-------------------------------------------------------------------------------------------------------------------------------
+"""Problem 7: You are given a partial code that is used for generating the HackerRank Logo of variable thickness.
+Your task is to replace the blank (______) with rjust, ljust or center."""
+
+#code:
+
+def main():
+    # Replace all ______ with rjust, ljust or center. 
+
+    thickness = int(input())  # This must be an odd number
+    c = 'H'
+    
+    # Top Cone
+    for i in range(thickness):
+        print((c * i).rjust(thickness - 1) + c + (c * i).ljust(thickness - 1))
+    
+    # Top Pillars
+    for i in range(thickness + 1):
+        print((c * thickness).center(thickness * 2) + (c * thickness).center(thickness * 6))
+    
+    # Middle Belt
+    for i in range((thickness + 1) // 2):
+        print((c * thickness * 5).center(thickness * 6))    
+    
+    # Bottom Pillars
+    for i in range(thickness + 1):
+        print((c * thickness).center(thickness * 2) + (c * thickness).center(thickness * 6))    
+    
+    # Bottom Cone
+    for i in range(thickness):
+        print(((c * (thickness - i - 1)).rjust(thickness) + c + (c * (thickness - i - 1)).ljust(thickness)).rjust(thickness * 6))  
+
+if __name__ == '__main__':
+    main()
+    
+ --------------------------------------------------------------------------------------------------------------------------------------
+ 
+ """Problem 8: You are given a string s and width w.
+Your task is to wrap the string into a paragraph of width ."""
+
+#code:
+
+import textwrap
+def wrap(string, max_width):
+    return textwrap.fill(string, max_width)
+    
+ ------------------------------------------------------------------------------------------------------------------------------
+ 
+ """Problem 9: Design a Doormat """
+  Size: 7 x 21 
+    ---------.|.---------
+    ------.|..|..|.------
+    ---.|..|..|..|..|.---
+    -------WELCOME-------
+    ---.|..|..|..|..|.---
+    ------.|..|..|.------
+    ---------.|.---------
+ 
+ #code:
+ 
+ N, M = map(int,input().split()) # More than 6 lines of code will result in 0 score. Blank lines are not counted.
+for i in range(0,N//2): 
+    print(('.|.'*i).rjust((M-2)//2,'-')+'.|.'+('.|.'*i).ljust((M-2)//2,'-'))
+print('WELCOME'.center(M,'-'))
+for i in reversed(range(0,N//2)): 
+    print(('.|.'*i).rjust((M-2)//2,'-')+'.|.'+('.|.'*i).ljust((M-2)//2,'-'))
+    
+-------------------------------------------------------------------------------------------------------------------------------
+
 
