@@ -1,1 +1,45 @@
+"""Problem 1 : Swap Case You are given a string and your task is to swap cases. 
+In other words, convert all lowercase letters to uppercase letters and vice versa."""
+
+#code: 
+
+import string
+def swap_case(s):
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+    T=[]
+    for i in range(len(s)):
+        if s[i] in lower:
+            T.append(s[i].upper())
+        elif s[i] in upper:
+            T.append(s[i].lower())
+        else:
+            T.append(s[i])
+    result=''.join(T)
+    return result
+    
+--------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 2 : You are given a string. Split the string on a " " (space) delimiter and join using a - hyphen. """
+
+#code:
+
+def split_and_join(line):
+    line=line.split(" ")
+    result="-".join(line)
+    return result
+    
+------------------------------------------------------------------------------------------------------------------------------
+
+"""Problem 3: You are given the firstname and lastname of a person on two different lines. 
+Your task is to read them and print the following:
+Hello firstname lastname! You just delved into python."""
+
+#code:
+
+def print_full_name(a, b):
+    print("Hello",a,b+"!","You just delved into python.",sep=" ")
+    
+---------------------------------------------------------------------------------------------------------------------------------
+
 
